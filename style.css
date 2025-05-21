@@ -1,0 +1,67 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #282c34;
+    color: #abb2bf;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #61afef;
+    margin-bottom: 10px;
+    text-align: center; /* Añadido para mejor centrado en todas las vistas */
+}
+
+#loading-message {
+    font-size: 1.2em;
+    color: #98c379;
+    text-align: center; /* Añadido para mejor centrado */
+}
+
+.drum-pads-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+    width: 100%;
+    max-width: 600px; /* Ajusta según necesites */
+    background-color: #21252b;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.pad {
+    background-color: #e06c75; /* Rojo claro */
+    color: #21252b; /* Texto oscuro para contraste */
+    font-weight: bold;
+    border: 2px solid #be5046; /* Borde rojo más oscuro */
+    border-radius: 8px;
+    aspect-ratio: 1 / 1; /* Mantiene los pads cuadrados */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(0.8em, 3vw, 1.1em); /* Tamaño de fuente responsivo */
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.05s ease-out, background-color 0.05s ease-out;
+    text-align: center;
+    padding: 5px; /* Añadido por si el texto es largo y necesita un pequeño respiro */
+    box-sizing: border-box; /* Asegura que el padding no aumente el tamaño total */
+}
+
+.pad:hover {
+    background-color: #ff7b86;
+}
+
+.pad.active {
+    transform: scale(0.92);
+    background-color: #be5046; /* Rojo más oscuro al activar */
+    border-color: #ab4136;
+    box-shadow: 0 0 10px #e06c75;
+}
